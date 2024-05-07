@@ -11,9 +11,32 @@
 
 const trip = parseInt(Number(prompt('Quanti Km devi fare?')));
 const age = parseInt(Number(prompt('Quanti anni hai?')));
+
+if (isNaN(trip) || isNaN(age)) {
+    alert(`
+I valori inseriti non sono numerici.
+Inserisci valori numerici per proseguire`
+    )
+}
+
 const price = 0.21
-const underAgePrice= price * 0.8
-const retiredPrice= price * 0.6
+const underAgeDiscount = 20
+const retiredDiscount = 40
+const underAgePrice= price - ( price * underAgeDiscount / 100)
+const retiredPrice= price - (price * retiredDiscount / 100)
+const underAgeTicket = Number.parseFloat((trip * underAgePrice).toFixed(2))
+const retiredTicket = Number.parseFloat((trip * retiredPrice).toFixed(2))
+const ticket = Number.parseFloat((trip * price).toFixed(2))
 
-    
-
+if (age<18) {
+    console.log(`il tuo biglietto costa ${underAgeTicket}€`)
+    // console.log(typeof(underAgeTicket))
+}
+else if (age >= 65) {
+    console.log(`il tuo biglietto costa ${retiredTicket}€`)
+        // console.log(typeof(retiredTicket))
+}
+else {
+    console.log(`il tuo biglietto costa ${ticket}€`)
+    // console.log(typeof(ticket))
+}
