@@ -20,19 +20,19 @@ const retiredTicket = Number.parseFloat((trip * retiredPrice).toFixed(2))
 const ticket = Number.parseFloat((trip * price).toFixed(2))
 
 if (age<18) {
-    // console.log = (`il tuo biglietto costa ${underAgeTicket}€ ed è scontato del ${underAgeDiscount}%`)
+    let displayPrice = (`il tuo biglietto costa ${underAgeTicket}€ ed è scontato del ${underAgeDiscount}%`)
     // console.log(typeof(underAgeTicket))
-    document.getElementById('price').innerHTML=underAgeTicket+'€'
-    document.getElementById('discount').innerHTML= 'Sconto: ' + underAgeDiscount + '%'
+    document.getElementById('price').innerHTML=displayPrice
+    // document.getElementById('discount').innerHTML= 'Sconto: ' + underAgeDiscount + '%'
 }
 else if (age >= 65) {
-    // console.log(`il tuo biglietto costa ${retiredTicket}€ ed è scontato del ${retiredDiscount}%`)
+    let displayPrice = (`il tuo biglietto costa ${retiredTicket}€ ed è scontato del ${retiredDiscount}%`)
     // console.log(typeof(retiredTicket))
-    document.getElementById('price').innerHTML=retiredTicket+'€'
-    document.getElementById('discount').innerHTML= 'Sconto: ' + retiredDiscount + '%'
+    document.getElementById('price').innerHTML=displayPrice
+    // document.getElementById('discount').innerHTML= 'Sconto: ' + retiredDiscount + '%'
 }
 else {
-    // console.log(`il tuo biglietto costa ${ticket}€`)
+    let displayPrice =(`il tuo biglietto costa ${ticket}€`)
     // console.log(typeof(ticket))
-    document.getElementById('price').innerHTML=ticket+'€'
+    document.getElementById('price').innerHTML=displayPrice
 }
