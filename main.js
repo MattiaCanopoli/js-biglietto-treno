@@ -3,7 +3,7 @@
 const trip = parseInt(Number(prompt('Quanti Km devi fare?')));
 const age = parseInt(Number(prompt('Quanti anni hai?')));
 
-if (isNaN(trip) || isNaN(age)) {
+if (isNaN(trip) || isNaN(age) ||(trip===0)||(age===0)) {
     alert(`
 I valori inseriti non sono validi.
 Inserisci valori numerici per calcolare il prezzo del biglietto`
